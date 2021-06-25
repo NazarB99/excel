@@ -46,11 +46,13 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: isDev,
+    writeToDisk: true,
+    open: 'chrome',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      filename: 'index.html',
+      template: './index.html',
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd,
